@@ -1,0 +1,62 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <h2>Admin Dashboard</h2>
+    <button onclick="logout()">Logout</button>
+</header>
+
+<div class="dashboard">
+    <h1>Welcome Admin</h1>
+
+    <div class="box">
+        <h2>Create New Quiz</h2>
+
+        <input type="text" id="quizTitle" placeholder="Quiz Name">
+
+        <h3>Add Question</h3>
+
+        <textarea id="questionText" placeholder="Enter Question"></textarea>
+
+        <select id="questionType" onchange="changeQuestionType()">
+            <option value="mcq">Multiple Choice</option>
+            <option value="truefalse">True / False</option>
+        </select>
+
+        <input type="text" id="options" placeholder="Options separated by commas">
+
+        <input type="text" id="correctAnswer" placeholder="Correct Answer">
+
+        <button onclick="addQuestion()">Add Question</button>
+
+        <p id="questionStatus"></p>
+        <p id="draftQuestions">Questions added: 0</p>
+
+        <button onclick="createQuiz()">Publish Quiz</button>
+    </div>
+
+    <div class="box">
+        <h2>Available Quizzes</h2>
+        <div id="quizList"></div>
+    </div>
+
+    <div class="box">
+        <h2>Registered Students</h2>
+        <div id="studentList"></div>
+    </div>
+
+    <div class="box">
+        <h2>All Student Marks</h2>
+        <div id="allResults"></div>
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
